@@ -1,8 +1,10 @@
 /** image-chunks.js
- * Webworker script for grayscaling an image data.
+ * Webworker script for grayscaling a chunk of image data.
  * @param {Buffer} data - the data to process
  */
-onmessage = function(data) {
+onmessage = function(event) {
+  console.log('fggkjlsdjfkghfdklsjghjlk');
+  var data = event.data;
   // Process each pixel separately
   for (var i = 0; i < l; i += 4) {
         var r = data[i];
@@ -11,7 +13,7 @@ onmessage = function(data) {
 
         // Generate the grayscale values using weights based
         // on human perception
-        var value = r * 0.2989 + g * 0.5870 + b * 0.1140;
+        var value = r * 0.2989 + g * 0.5870 + b 0.1140;
 
         // Set the pixel RGB values to our grayscale value
         binaryData[i] = value;
